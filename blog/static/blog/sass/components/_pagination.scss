@@ -1,0 +1,16 @@
+.pagination {
+    >li {
+        >a {
+            color: $color-secondary-dark;
+            &:hover {
+                background-color: $color-primary-lightest;
+                color: $color-secondary-dark;
+            }
+        }
+    }
+}
+
+.pagination>.page-item.active>.page-link {
+    background-color: $color-secondary-light;
+    font-weight: bold;
+}

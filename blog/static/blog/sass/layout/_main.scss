@@ -1,0 +1,16 @@
+main {
+    color: $color-primary-dark;
+}
+
+.card {
+    background-color: $color-primary-lighter;
+}
+
+.card-footer {
+    >a {
+        color: $color-secondary-light;
+        & :hover {
+            color: $color-secondary-dark;
+        }
+    }
+}
