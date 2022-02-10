@@ -1,0 +1,46 @@
+{% extends 'account/base.html' %}
+{% load static %}
+
+{% comment %} {% extends 'blog/base.html' %} {% endcomment %}
+
+
+
+
+{% block head_title %}Home Page{% endblock head_title %}
+
+
+{% block maincontent %}
+    {% for post in posts %}
+    <div class="card mb-3 border-0 ms-1 me-1">
+        <div class="card-body">
+            <div class="row g-0">
+                <div class="col-md-5">
+                    <div class="ratio ratio-16x9">
+                        <!-- featured image -->
+                        <img src="{{ post.image.url }}" class="rounded img-thumbnail img-fluid" alt="{{post.title}}">
+                    </div>
+                </div>
+
+                <div class="col-md-7 ps-md-3 pt-3 pt-md-0 d-flex flex-column">
+                        <h1 class="card-title">
+                                {{ post.title }}
+                        </h1>
+                        <div class="text-muted">
+                            <small>
+                                Published {{ post.publish.date }} by <strong>{{ post.author }}</strong>
+                            </small>
+                        </div>
+                        <p class="card-text mb-auto py-2">{{ post.body|safe|striptags|truncatechars:100 }}</p>
+                        <div class="card-footer">
+                            <p class="card-text"> <a href="{{ post.get_absolute_url }}"><small>Read more...</small></a></p>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endfor %}
+
+    {% include "blog/pagination.html" with page=posts %}
+
+{% endblock maincontent %}

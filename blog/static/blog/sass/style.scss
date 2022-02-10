@@ -1,0 +1,15 @@
+// Imports
+@import url(../fontawesome/all.css);
+// Components
+@import 'components/variables';
+@import 'components/pagination';
+@import 'components/buttons';
+// Base styles
+@import 'base/typography';
+@import 'base/reset';
+@import 'base/page';
+// Layout styling
+@import 'layout/navbar';
+@import 'layout/main';
+@import 'layout/footer';
+@import url(../bootstrap/css/bootstrap.css);

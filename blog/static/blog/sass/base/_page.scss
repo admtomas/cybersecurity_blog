@@ -1,0 +1,21 @@
+// Prevents scrollbar from overlapping content.
+body {
+    -ms-overflow-style: scrollbar;
+    background-color: $color-primary-lightest;
+}
+
+// Set box model to border-box.
+// Based on css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+.container-bg {
+    background-color: $color-primary-lightest;
+}
