@@ -4,7 +4,7 @@ from .models import Post, Comment
 from .forms import CommentForm
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
-#* Index Page view to display all Posts in form of a list
+#* Home Page view, display list of the Posts
 def post_list(request):
     posts = Post.published.all()
 
@@ -19,7 +19,7 @@ def post_list(request):
 
     return render(request,'blog/post_list.html',{'posts':posts, page:'pages'})
 
-#* Display specific Post instead all of them
+#* Display one Post
 def post_detail(request, post):
     post = get_object_or_404(Post, slug=post, status='published')
 
