@@ -69,7 +69,7 @@
                                 <a class="me-2" href="{% url 'account_logout' %}">Sign Out</a>
                                 {% else %}
                                 <a class="me-3" href="{% url 'account_login' %}">Sign In</a>
-                                <a class="me-2" href="{% url 'account_signup' %}">Sign Up</a>
+                                {% comment %} <a class="me-2" href="{% url 'account_signup' %}">Sign Up</a> {% endcomment %}
                                 {% endif %}
                             </div>
                     </div>
