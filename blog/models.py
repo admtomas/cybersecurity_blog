@@ -19,7 +19,7 @@ class Post(models.Model):
 
     title = models.CharField(max_length=255)
     slug = models.SlugField()
-    image = models.ImageField(upload_to='images/%d/%m/%Y/')
+    image = models.ImageField(upload_to='images/%d/%m/%Y/', blank=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE,related_name='blog_posts')
     # Attach text editor to the body to style the article
     body=RichTextUploadingField()
