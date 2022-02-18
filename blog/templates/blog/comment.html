@@ -7,7 +7,7 @@
         {% if  comment.parent.name%} to <strong>{{comment.parent.name}}</strong>{% endif %}
         <small class="text-muted">On {{ comment.created.date }}</small>
     </div>
-    <div class="border p-2 rounded">
+    <div class="border p-2 rounded col-sm-10 col-md-8">
         <p>{{comment.body}}</p>
         {% comment %} Button for replaying to comment to be refactored {% endcomment %}
         {% comment %} <button class="btn btn-primary btn-sm" onclick="handleReply({{comment.id}})">Reply</button> {% endcomment %}
