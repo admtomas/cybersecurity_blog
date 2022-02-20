@@ -1,6 +1,7 @@
 from ast import Try
 from django.shortcuts import render,get_object_or_404, redirect
-from .models import Post, Comment
+from django.views.generic import TemplateView
+from .models import Post, Comment, About
 from .forms import CommentForm
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
@@ -62,3 +63,9 @@ def reply_page(request):
             return redirect(post_url+'#'+str(reply.id))
 
     return redirect('/')
+
+# * Create view for About PAge
+def about_page(request):
+    about_page = get_object_or_404(About)
+
+    return render(request,'blog/about.html',{'about_page': about_page})
