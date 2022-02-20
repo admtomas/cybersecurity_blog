@@ -4,22 +4,22 @@
 {% block head_title %}About Page{% endblock head_title %}
 
 {% block maincontent %}
+
 <div class="card mb-3 border-0 ms-1 me-1">
     <div class="card-body">
         <div class="row g-0">
 
             <div class="col-sm-6 ps-md-3 pt-3 pt-md-0 d-flex flex-column">
                 <h1 class="card-title">
-                    Few words about this project
+                    {{about_page.title}}
                 </h1>
 
                 <p class="card-text mb-auto py-2">
-                    test test Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit asperiores tempora consequatur et at quisquam delectus porro, perferendis, laudantium incidunt nostrum ab quae ratione maxime? Ipsam aspernatur placeat sed, adipisci iusto quia beatae sint non repellat maxime, consequatur dignissimos rerum soluta qui minus labore ullam cupiditate magni, omnis at tempora.
+                    {{about_page.body|safe}}
                 </p>
             </div>
         </div>
     </div>
 </div>
-
 
 {% endblock maincontent %}

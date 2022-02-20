@@ -1,3 +1,4 @@
+from turtle import title
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
@@ -68,3 +69,14 @@ class Comment(models.Model):
 
     def get_comments(self):
         return Comment.objects.filter(parent=self).filter(active=True)
+
+#* --- Create model for About Page ---
+class About(models.Model):
+    title = models.CharField(max_length=255)
+    body=RichTextUploadingField()
+
+    class Meta:
+        verbose_name_plural = "About"
+
+    def __str__(self):
+        return self.title
